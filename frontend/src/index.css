@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kurdish Font Face */
+@font-face {
+  font-family: 'KurdishFont';
+  src: url('/fonts/kurdishFont.eot');
+  src: url('/fonts/kurdishFont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/kurdishFont.woff') format('woff'),
+       url('/fonts/kurdishFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    @apply m-0 p-0 min-w-[320px] h-screen max-h-screen bg-white overflow-hidden;
+    font-family: 'KurdishFont', system-ui, -apple-system, 'Segoe UI', Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  /* RTL direction support for Kurdish text */
+  .rtl {
+    direction: rtl;
+  }
+}
+
+@layer components {
+  /* Logo gradient background - complex gradient that needs custom CSS */
+  .logo-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    background-image: 
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+      linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+  }
+}
